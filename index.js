@@ -24,8 +24,8 @@ app.get("/elo", async (req, res) => {
 
     const data = await response.json();
 
-  if (!response.ok) {
-  return res.send("Erro ao buscar o elo.");
+ if (!response.ok) {
+  return res.send(`Erro da API: ${response.status} - ${JSON.stringify(data)}`);
 }
 
 const rank = data.data.current.tier.name;
