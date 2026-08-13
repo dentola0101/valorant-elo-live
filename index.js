@@ -13,8 +13,8 @@ app.get("/", (req, res) => {
 
 app.get("/elo", async (req, res) => {
   try {
-    const response = await fetch(
-      `https://api.henrikdev.xyz/valorant/v3/mmr/${REGION}/${NAME}/${TAG}`,
+const response = await fetch(
+  `https://api.henrikdev.xyz/valorant/v3/mmr/${REGION}/pc/${NAME}/${TAG}`,
       {
         headers: {
           Authorization: API_KEY,
