@@ -28,8 +28,8 @@ app.get("/elo", async (req, res) => {
       return res.send("Erro ao buscar o elo.");
     }
 
-    const rank = data.data.current.tier.name;
-    const rr = data.data.current.rr;
+const rank = data.data.current.tier.name;
+const rr = data.data.current.rr || data.data.current.elo;
 
     res.send(`${NAME} está ${rank} com ${rr} RR.`);
   } catch (err) {
